@@ -1,0 +1,515 @@
+re
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg"
+        version="1.1">
+        <defs>
+            <filter id="round">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                    result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
+    <canvas id="bg-canvas"></canvas>
+    <nav class="navbar">
+        <div class="logo">Tinif Faustine</div>
+        <button class="menu-toggle" id="mobile-menu" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#freelance">Freelance</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+    <header class="hero" id="home">
+        <div class="hero-content reveal">
+            <h1>Hello, I'm <span class="highlight">Tinif Faustine</span></h1>
+            <p>Specializing in <span class="vibrant-mech">Mechanical Design</span> and <span class="vibrant-ros">ROS
+                    system architecture</span>.</p>
+            <a href="#projects" class="btn">View My Work</a>
+            <div class="hero-actions"
+                style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="assets/documents/Tinif_Resume.pdf" download class="btn outline-btn">Download Resume</a>
+                <a href="assets/documents/Tinif_CV.pdf" download class="btn outline-btn">Download CV</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container reveal">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="profile-image-container">
+                    <div class="mirror-container">
+                        <div class="profile-mirror"></div>
+                        <div class="profile-mirror small"></div>
+                    </div>
+                    <img src="assets/images/profile/placeholder.jpg" alt="Profile Photo" class="profile-photo">
+                </div>
+                <div class="about-text">
+                    <p>Robotics Engineer with 1+ year of experience in robotic system design, 3D CAD modeling, and
+automation. Proficient in SolidWorks, Fusion 360, and ROS2, with embedded systems integration (ESP32,
+Raspberry Pi). Focused on building efficient, scalable machine/robotic solutions from concept to deployment.</p>
+                </div>
+            </div>
+
+            <div class="skills-expertise-container">
+                <!-- Expertise Block -->
+                <div class="expertise-block">
+                    <div class="sub-section-header">
+                        <span class="dot"></span>
+                        <span class="line"></span>
+                        <h3>EXPERTISE</h3>
+                        <span class="line"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="expertise-grid">
+                        <div class="expertise-item">
+                            <div class="expertise-icon">
+                                <svg width="50" height="50" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 18L22 12L16 6" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M8 6L2 12L8 18" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <h4>ROS 2</h4>
+                            <p>Robot Operating System 2</p>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="expertise-icon">
+                                <svg width="50" height="50" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 21V3H19V7H9V11H17V15H9V21" stroke="#f59e0b" stroke-width="3"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <h4>Fusion 360</h4>
+                            <p>3D Design & Simulation</p>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="expertise-icon">
+                                <svg width="50" height="50" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="#ef4444" stroke-width="2"
+                                        stroke-linejoin="round" />
+                                    <path d="M12 22V12" stroke="#ef4444" stroke-width="2" />
+                                    <path d="M22 7L12 12L2 7" stroke="#ef4444" stroke-width="2" />
+                                    <path d="M7 4.5L17 9.5" stroke="#ef4444" stroke-width="1.5" />
+                                </svg>
+                            </div>
+                            <h4>SOLIDWORKS</h4>
+                            <p>Advanced Mechanical Design</p>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="expertise-icon">
+                                <svg width="50" height="50" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 16V8L12 3L3 8V16L12 21L21 16Z" fill="#34d399" fill-opacity="0.2"
+                                        stroke="#34d399" stroke-width="2" />
+                                    <path d="M12 3V21" stroke="#34d399" stroke-width="2" />
+                                    <path d="M3 8L21 16" stroke="#34d399" stroke-width="2" />
+                                    <path d="M21 8L3 16" stroke="#34d399" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <h4>Creo</h4>
+                            <p>Product Design & Development</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What I Do Block -->
+                <div class="what-i-do-block">
+                    <div class="sub-section-header">
+                        <span class="dot"></span>
+                        <span class="line"></span>
+                        <h3>WHAT I DO</h3>
+                        <span class="line"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="what-i-do-grid">
+                        <div class="what-i-do-item">
+                            <div class="circle-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 19L10 11L18 11" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M10 11L12 5" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" />
+                                    <circle cx="6" cy="19" r="2" stroke="#60a5fa" stroke-width="2" />
+                                    <rect x="17" y="10" width="2" height="2" stroke="#60a5fa" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <h4>Robotic System Design</h4>
+                        </div>
+                        <div class="what-i-do-item">
+                            <div class="circle-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="3" stroke="#60a5fa" stroke-width="2" />
+                                    <path
+                                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                                        stroke="#60a5fa" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <h4>Mechanical Design & CAD Modeling</h4>
+                        </div>
+                        <div class="what-i-do-item">
+                            <div class="circle-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="4" y="4" width="16" height="16" rx="2" stroke="#60a5fa" stroke-width="2" />
+                                    <path d="M9 9H15V15H9V9Z" fill="#60a5fa" fill-opacity="0.3" stroke="#60a5fa"
+                                        stroke-width="2" />
+                                    <path d="M9 1L9 4" stroke="#60a5fa" stroke-width="2" />
+                                    <path d="M15 1L15 4" stroke="#60a5fa" stroke-width="2" />
+                                    <path d="M9 20L9 23" stroke="#60a5fa" stroke-width="2" />
+                                    <path d="M15 20L15 23" stroke="#60a5fa" stroke-width="2" />
+                                    <path d="M20 9L23 9" stroke="#60a5fa" stroke-width="2" />
+                                    <path d="M20 15L23 15" stroke="#60a5fa" stroke-width="2" />
+                                    <path d="M1 9L4 9" stroke="#60a5fa" stroke-width="2" />
+                                    <path d="M1 15L4 15" stroke="#60a5fa" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <h4>Embedded Systems Integration</h4>
+                        </div>
+                        <div class="what-i-do-item">
+                            <div class="circle-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="7" y="15" width="10" height="4" rx="1" stroke="#60a5fa" stroke-width="2" />
+                                    <circle cx="7" cy="19" r="2" stroke="#60a5fa" stroke-width="2" />
+                                    <circle cx="17" cy="19" r="2" stroke="#60a5fa" stroke-width="2" />
+                                    <path d="M9 15V9H15V15" stroke="#60a5fa" stroke-width="2" />
+                                    <circle cx="12" cy="7" r="2" stroke="#60a5fa" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <h4>Mobile Robot Development</h4>
+                        </div>
+                        <div class="what-i-do-item">
+                            <div class="circle-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 18L22 12L16 6" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M8 6L2 12L8 18" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M14 4L10 20" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <h4>ROS 2 Development</h4>
+                        </div>
+                        <div class="what-i-do-item">
+                            <div class="circle-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 16V8L12 3L3 8V16L12 21L21 16Z" stroke="#60a5fa" stroke-width="2" />
+                                    <path d="M12 3V12L21 8" stroke="#60a5fa" stroke-width="2" />
+                                    <path d="M12 12L3 8" stroke="#60a5fa" stroke-width="2" />
+                                    <path d="M12 12V21" stroke="#60a5fa" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <h4>Simulation & Prototyping</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <div class="container reveal">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline" id="experience-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Apr 2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Mechanical Design And ROS Engineer</h3>
+                        <p>Rezilyens LLC</p>
+                        <p>Leading development of autonomous mobile robots (AMRs) and integrating ROS2-based navigation
+                            stacks.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Sep 2024 - Jan 2025</div>
+                    <div class="timeline-content">
+                        <h3>Mechanical Engineer Intern</h3>
+                        <p>Solavio labs</p>
+                        <p>Interned at a solar panel cleaning robot manufacturing company, assisting in the assembly and installation of robotic systems. Gained hands-on experience with hardware integration, troubleshooting, and system optimization for efficient operations.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Jul2023 - Jul2023</div>
+                    <div class="timeline-content">
+                        <h3>Mechanical Engineer Intern</h3>
+                        <p>Ganapathy Pneumatics</p>
+                        <p>Completed an internship at a manufacturing company  gaining   hands-on experience with CNC machines and various other industrial machinery.</p>
+                    </div>
+                </div>
+                <div class="timeline-item hidden-experience">
+                    <div class="timeline-date">Mar 2023 - Mar 2023</div>
+                    <div class="timeline-content">
+                        <h3>Mechanical Engineer Intern</h3>
+                        <p>Apt Tools & Machinery India Private Limited</p>
+                        <p>Interned at a tools manufacturing and packing company,  learning the processes for manufacturing and packaging nails  and similar products.</p>
+                    </div>
+                </div>
+                <div class="timeline-item hidden-experience">
+                    <div class="timeline-date">Feb 2023 - Feb 2023</div>
+                    <div class="timeline-content">
+                        <h3>Mechanical Engineering Intern</h3>
+                        <p>SYSS Tech gear's</p>
+                        <p>Completed an internship at a gear manufacturing company,  learning gear production processes and operating gear making machinery.</p>
+                    </div>
+                </div>
+                <div class="timeline-item hidden-experience">
+                    <div class="timeline-date">Oct 2022 - Oct 2022</div>
+                    <div class="timeline-content">
+                        <h3>Mechanical Engineer Intern</h3>
+                        <p>Hindustaan foundry</p>
+                        <p>Interned at a foundry, gaining knowledge of casting  processes, types of casting, and various cast items produced.</p>
+                    </div>
+                </div>
+                <div class="timeline-item hidden-experience">
+                    <div class="timeline-date">Sep 2022 - Sep 2022</div>
+                    <div class="timeline-content">
+                        <h3>Mechanical Engineer Intern</h3>
+                        <p>Visual Education Aids (P) Ltd</p>
+                        <p>Interned at a robot part manufacturing company, gaining hand-on  experience in the manufacturing processes, assembly, and rigorous testing of those components.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="show-more-container">
+                <button id="show-more-experience" class="btn outline-btn">Show More</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <div class="container reveal">
+            <h2 class="section-title">Education</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Bachelor's in Mechanical Engineering</h3>
+                    <p class="institution">Sri Shakthi Institute of Engineering and Technology</p>
+                    <p class="date">2021 - 2025</p>
+                    <p>Bachelor of Engineering in Mechanical Engineering with a focus on CAD Design and Robotics</p>
+                </div>
+                <div class="card">
+                    <h3>Higher Secondary</h3>
+                    <p class="institution">Carmel Garden Matriculation Higher Secondary School</p>
+                    <p class="date">2019 - 2021</p>
+                    <p>Completed Higher Secondary Education with a focus on science and engineering fundamentals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section id="certifications" class="section">
+        <div class="container reveal">
+            <h2 class="section-title">Certifications & Achievements</h2>
+            <div class="certifications-wrapper">
+                <div class="marquee-container">
+                    <div class="marquee-content left-to-right" id="cert-marquee-1">
+                        <!-- Dynamic content -->
+                    </div>
+                </div>
+                <div class="marquee-container" style="margin-top: 1.5rem;">
+                    <div class="marquee-content right-to-left" id="cert-marquee-2">
+                        <!-- Dynamic content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="projects" class="section">
+        <div class="container reveal">
+            <h2 class="section-title">Projects</h2>
+            <p class="click-note">👉 Click on any project card to view more details.</p>
+            <div class="certifications-wrapper">
+                <div class="marquee-container">
+                    <div class="marquee-content left-to-right" id="projects-marquee">
+                <a href="projects/project1.html" class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/projects/project1/img1.jpeg" alt="Semi-Humanoid Robots">
+                    </div>
+                    <div class="project-info">
+                        <h3>Semi-Humanoid Robot</h3>
+                        <div class="project-company">Rezilyens LLC</div>
+                        <p>Designed and developed a semi-humanoid robot by handling complete CAD modeling, circuit design, ROS 2 integration, and system-level programming.</p>
+                        <div class="tags">
+                            <span>CAD Design</span><span>Sheetmetal</span><span>Fabrication</span><span>Raspberry pi</span><span>ROS2</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="projects/project3.html" class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/projects/project3/img1.jpeg" alt="Server Robot Design">
+                    </div>
+                    <div class="project-info">
+                        <h3>Server Robot Design</h3>
+                        <div class="project-company">Personal Project</div>
+                        <p>Designed a complete sheet metal service robot with a fully finalized CAD model ready for manufacturing.</p>
+                        <div class="tags">
+                            <span>CAD Design</span><span>Sheetmetal</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="projects/project4.html" class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/projects/project4/img1.jpeg" alt="Micro IoT Car">
+                    </div>
+                    <div class="project-info">
+                        <h3>Micro IoT Car</h3>
+                        <div class="project-company">Pesrsonal Project</div>
+                        <p>Designed and built a compact 60×80 mm smart car with a 3D-printed structure, CAD modeling, and ESP32-based IoT control.</p>
+                        <div class="tags">
+                            <span>CAD Design</span><span>3D Printing</span><span>Electronics</span><span>ESP32</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="projects/project5.html" class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/projects/project5/img1.jpeg" alt="Computer Vision for Sorting">
+                    </div>
+                    <div class="project-info">
+                        <h3>Quad Leg Robot Design,Simulation And Integrated With ROS</h3>
+                        <div class="project-company">4th Semester Project</div>
+                        <p>Designed and simulated a quadruped robot with full CAD modeling and seamless ROS integration.
+                        </p>
+                        <div class="tags">
+                            <span>CAD Design</span><span>Simulation</span><span>ROS2</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="projects/project6.html" class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/projects/project6/img1.jpeg" alt="Exoskeleton Design">
+                    </div>
+                    <div class="project-info">
+                        <h3>Fabrication of Dual Side Shaper Machine</h3>
+                        <div class="project-company">5th Semester Project</div>
+                        <p>Fabricated a dual-side shaper machine as a semester project, covering full mechanical design, manufacturing, and assembly.
+                        </p>
+                        <div class="tags">
+                            <span>CAD Design</span><span>Fabrication</span><span>Welding</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="projects/project7.html" class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/projects/project7/img1.png" alt="Multi-Agent Systems">
+                    </div>
+                    <div class="project-info">
+                        <h3>Ecommerce Website</h3>
+                        <div class="project-company">University Robotics Club</div>
+                        <p>Developed an e-commerce website using HTML, CSS, JavaScript, and Python, featuring a complete front-end and back-end implementation.</p>
+                        <div class="tags">
+                            <span>HTML</span><span>CSS</span><span>JS</span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                </div>
+            </div>
+        </div>
+    <section id="freelance" class="section">
+        <div class="container reveal">
+            <h2 class="section-title">Freelance Work</h2>
+            <p class="click-note">👉 Click on any freelance work to view more details.</p>
+            <div class="certifications-wrapper">
+                <div class="marquee-container">
+                    <div class="marquee-content right-to-left" id="freelance-marquee">
+                <a href="projects/freelance1.html" class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/freelance/freelance1/img1.jpeg" alt="Freelance Project 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>CAD Modeling</h3>
+                        <div class="project-company">Independent Client's</div>
+                        <p>Provided CAD modeling and animation services for students, academic projects, and industrial applications.</p>
+                        <div class="tags">
+                            <span>CAD Modeling</span><span>3D Printing</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="projects/freelance2.html" class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/freelance/freelance2/img1.jpeg" alt="Freelance Project 2">
+                    </div>
+                    <div class="project-info">
+                        <h3>Reverse Engineering </h3>
+                        <div class="project-company">3D Priniting Startup</div>
+                        <p>Delivered reverse-engineered CAD models to 3D printing companies, enabling accurate part reproduction and manufacturing.</p>
+                        <div class="tags">
+                            <span>CAD Design</span><span>3D Printing</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="projects/freelance3.html" class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/freelance/freelance3/img1.jpeg" alt="Freelance Project 3">
+                    </div>
+                    <div class="project-info">
+                        <h3>CAD Design/Drawing</h3>
+                        <div class="project-company">IIT College </div>
+                        <p>Delivered CAD designs and technical drawings for clients from IIT institutions.</p>
+                        <div class="tags">
+                            <span>CAD Design</span><span>Design Thinking</span><span>Engineering Drawing</span><span>Dashboard</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3 class="footer-logo">Tinif Faustine</h3>
+                    <p>Mechanical Design & ROS System Architecture</p>
+                </div>
+                <div class="footer-contact">
+                    <p><strong>Contact:</strong> 8489468195</p>
+                    <p><strong>WhatsApp:</strong> 8489468195</p>
+                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tinif-faustine-j" target="_blank">Tiinif Faustine</a></p>
+                    <p><strong>Mail:</strong> <a href="mailto:jtinif@gmail.com">jtinif@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tinif Faustine All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
