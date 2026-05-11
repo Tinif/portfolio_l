@@ -1,0 +1,153 @@
+/* Project Detail Styles */
+.project-detail-page {
+    padding-top: 80px;
+}
+
+.pd-hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+}
+
+.pd-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
+    z-index: 1;
+}
+
+.pd-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.pd-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.pd-company {
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.back-btn:hover {
+    transform: translateX(-5px);
+}
+
+/* Slider Styles */
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 50px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.slider-track {
+    display: flex;
+    width: fit-content;
+    animation: scroll-left 35s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.slider-item {
+    flex: 0 0 400px;
+    height: 250px;
+    margin: 0 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.5s ease, filter 0.5s ease, box-shadow 0.5s ease;
+    filter: brightness(0.7) scale(0.9);
+    /* Increased brightness for better contrast */
+    position: relative;
+}
+
+.slider-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Highlighting the center image using JS-based detection or CSS approximation */
+/* For CSS approximation, we can't easily detect "center" in a moving track without JS */
+/* But we can style a class '.highlight' that JS will apply */
+.slider-item.highlighted {
+    filter: brightness(1) scale(1.1);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.5);
+    z-index: 10;
+}
+
+.pd-section {
+    margin-bottom: 4rem;
+}
+
+.pd-section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+}
+
+.pd-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.pd-img-placeholder {
+    background: var(--card-bg);
+    border: 2px dashed var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+    .pd-two-col {
+        grid-template-columns: 1fr;
+    }
+
+    .pd-hero h1 {
+        font-size: 2.5rem;
+    }
+}
