@@ -80,10 +80,6 @@ const certificatesData = [
         "caption": "Competition Achievement"
     },
     {
-        "src": "assets/certificates_and_achievements/Patend.jpeg",
-        "caption": "Patend"
-    },
-    {
         "src": "assets/certificates_and_achievements/School Competition Guid.jpeg",
         "caption": "School Competition Guid"
     },
